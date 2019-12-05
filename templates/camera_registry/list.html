@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="container">
+        <h3 class="text-center">Camera List</h3>
+        <hr />
+        <div class="col-md-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Analytic Preferred</th>
+                    <th>RTVSP</th>
+                    <th>Active</th>
+                    <th>Created By</th>
+                    <th>Created On</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if cam_list.count == 0 %}
+                    <tr class="text-center"><td colspan="9">No Cams Registered</td></tr>
+                {% else %}
+                    {% for cam in cam_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}.</td>
+                        <td>{{ cam.title }}</td>
+                        <td>{{ cam.description }}</td>
+                        <td>{{ cam.preferred_analytics }}</td>
+                        <td>{{ cam.rtvsp_url }}</td>
+                        <td>{{ cam.is_active }}</td>
+                        <td>{{ cam.registered_by }}</td>
+                        <td>{{ cam.added_on }}</td>
+                        <td><button class="btn-xs btn btn-danger">Delete</button></td>
+                    </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

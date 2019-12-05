@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>
+        Registry | Wi-Fiber Video Analytics System
+    </title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Wi-Fiber</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a class="active" href="{% url 'cam_registry_list' %}">List Cameras</a></li>
+        </ul>
+        <a href="{% url 'cam_registry_insert' %}" class="btn btn-warning navbar-btn">New Camera</a>
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'LogoutUrl' %}">Logout &nbsp; <span class="glyphicon glyphicon-log-in"></span></a></li>
+        </ul>
+      </div>
+    </nav>
+    {% block content %}{% endblock %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+</body>
+</html>
+
+
