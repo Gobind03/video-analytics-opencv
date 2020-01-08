@@ -18,11 +18,13 @@ from django.http import HttpResponseRedirect
 from django.urls import path, include
 from accounts import urls as accounts_urls
 from cam_registry import urls as cam_registry_urls
+from landing_site import urls as landing_site_urls
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include(accounts_urls)),
     path('cam-registry/', include(cam_registry_urls)),
-    path('', lambda r: HttpResponseRedirect('accounts/login/')),
+    path('landing/', include(landing_site_urls)),
+    path('', lambda r: HttpResponseRedirect('landing/home/')),
 ]

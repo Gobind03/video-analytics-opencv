@@ -33,7 +33,7 @@
                         <td>{{ cam.is_active }}</td>
                         <td>{{ cam.registered_by }}</td>
                         <td>{{ cam.added_on }}</td>
-                        <td><button class="btn-xs btn btn-danger">Delete</button></td>
+                        <td><a href="http://52.15.114.54:8000/video_feed?rtsp_string={{ cam.rtvsp_url }}" target="_blank" class="btn-xs btn btn-info">View</a></td>
                     </tr>
                     {% endfor %}
                 {% endif %}
